@@ -1,0 +1,17 @@
+{
+  "profiles": {
+    "LocalitiesManagerLocal": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:64866;http://localhost:18689",
+      "environmentVariables": {
+        "ENVIRONMENT": "Local"
+      }
+    },
+    "LocalitiesManagerProduction": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:64866;http://localhost:18689"
+    }
+  }
+}

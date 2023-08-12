@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "H4UAV5UjqkqE8TaY6+L5g1Dg/HcmUpNdcVNnP4eaGmv4ewT7qktTtFWP+uxKXs9q+7Nx1W7y9J8PqQtbFrOgaw==",
+  "success": true,
+  "projectFilePath": "/Users/egor/Visual studio/LocalitiesManager/LocalitiesManager/LocalitiesManager.csproj",
+  "expectedPackageFiles": [
+    "/Users/egor/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/Users/egor/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/egor/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "/Users/egor/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "/Users/egor/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "/Users/egor/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

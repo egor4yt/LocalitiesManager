@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/TelegramBotTest.props" />
+</Project>

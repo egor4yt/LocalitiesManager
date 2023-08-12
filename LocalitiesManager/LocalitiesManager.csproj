@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>disable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <AssemblyName>TelegramBotTest</AssemblyName>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(RunConfiguration)' == 'LocalitiesManagerLocal' "/>
+    <PropertyGroup Condition=" '$(RunConfiguration)' == 'LocalitiesManagerProduction' "/>
+    <ItemGroup>
+        <None Remove="Configuration\"/>
+        <None Remove="Swashbuckle.AspNetCore"/>
+        <None Remove="Extensions\"/>
+        <None Remove="Helpers\"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Configuration\"/>
+        <Folder Include="Extensions\"/>
+        <Folder Include="Helpers\"/>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0"/>
+    </ItemGroup>
+</Project>
