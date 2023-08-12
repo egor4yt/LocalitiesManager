@@ -1,9 +1,9 @@
-﻿using LocalitiesManager.Configuration;
+﻿using LocalitiesManager.Api.Configuration;
 
 AppConfiguration.CheckEnvironmentVariables();
 
 var builder = WebApplication.CreateBuilder(args);
-//builder.ConfigureServices();
+builder.ConfigureServices();
 
 var app = builder.Build();
 

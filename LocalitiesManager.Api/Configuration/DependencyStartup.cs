@@ -1,6 +1,7 @@
-﻿using LocalitiesManager.Extensions;
+﻿using LocalitiesManager.Api.Extensions;
+using LocalitiesManager.Api.Helpers;
 
-namespace LocalitiesManager.Configuration;
+namespace LocalitiesManager.Api.Configuration;
 
 public static class DependencyStartup
 {
@@ -15,8 +16,11 @@ public static class DependencyStartup
         services.AddControllers();
         services.AddHttpContextAccessor();
         services.AddMemoryCache();
-        services.AddSwaggerGen();
         services.AddEndpointsApiExplorer();
+        
+        if (EnvironmentHelper.IsProduction) return;
+        
+        services.AddSwaggerGen();
     }
 
     private static void AddCommands(IServiceCollection services)

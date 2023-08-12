@@ -1,4 +1,4 @@
-﻿namespace LocalitiesManager.Extensions;
+﻿namespace LocalitiesManager.Api.Extensions;
 
 public static class ServiceCollectionExtension
 {

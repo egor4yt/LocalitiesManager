@@ -1,7 +1,7 @@
-﻿using LocalitiesManager.Extensions;
-using LocalitiesManager.Helpers;
+﻿using LocalitiesManager.Api.Helpers;
+using LocalitiesManager.Api.Extensions;
 
-namespace LocalitiesManager.Configuration;
+namespace LocalitiesManager.Api.Configuration;
 
 public static class AppConfiguration
 {
