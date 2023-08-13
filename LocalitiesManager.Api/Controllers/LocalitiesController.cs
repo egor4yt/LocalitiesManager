@@ -51,7 +51,7 @@ public class LocalitiesController : ApiControllerBase
     [HttpDelete("delete/{localityId:long}")]
     [ProducesResponseType(typeof(UpdateOneLocalitiesCommandsResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<ActionResult<UpdateOneLocalitiesCommandsResponse>> UpdateOne([FromRoute] long localityId)
+    public async Task<ActionResult<UpdateOneLocalitiesCommandsResponse>> DeleteOne([FromRoute] long localityId)
     {
         var request = new DeleteOneLocalitiesCommandsRequest();
         request.LocalityId = localityId;

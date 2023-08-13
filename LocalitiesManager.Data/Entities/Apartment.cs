@@ -10,7 +10,7 @@ public class Apartment : EntityBase
     [Required]
     [StringLength(100)]
     [Column(TypeName = "VARCHAR")]
-    public long Number { get; set; }
+    public string Number { get; set; }
 
     [Required]
     public long HouseId { get; set; }

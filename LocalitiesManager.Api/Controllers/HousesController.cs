@@ -11,6 +11,7 @@ public class HousesController : ApiControllerBase
     [HttpPost("create-one")]
     [ProducesResponseType(typeof(CreateOneHousesCommandsResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status409Conflict)]
     public async Task<ActionResult<CreateOneHousesCommandsResponse>> CreateOne([FromBody] CreateOneHousesCommandsRequest query)
     {
         var result = await Mediator.Send(query);
@@ -30,7 +31,7 @@ public class HousesController : ApiControllerBase
     [HttpDelete("delete/{houseId:long}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<ActionResult> UpdateOne([FromRoute] long houseId)
+    public async Task<ActionResult> DeleteOne([FromRoute] long houseId)
     {
         var request = new DeleteOneHousesCommandsRequest();
         request.HouseId = houseId;

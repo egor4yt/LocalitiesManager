@@ -5,5 +5,5 @@ namespace LocalitiesManager.Data.Repositories.Interfaces;
 
 public interface ILocalityRepository : IRepositoryBase<Locality>
 {
-    public Task<Locality> FindFirstOrDefaultWithStreetsAsync(Expression<Func<Locality, bool>> match);
+    Task<Locality> FindFirstOrDefaultWithStreetsAsync(Expression<Func<Locality, bool>> match);
 }

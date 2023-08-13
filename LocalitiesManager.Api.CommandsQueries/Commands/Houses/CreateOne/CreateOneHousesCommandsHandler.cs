@@ -24,6 +24,9 @@ public class CreateOneHousesCommandsHandler : IRequestHandler<CreateOneHousesCom
         var streetExists = await _streetRepository.ExistsAsync(x => x.Id == request.StreetId);
         if (streetExists == false) throw new NotFoundException($"Street with id {request.StreetId} not found");
 
+        var houseExists = await _houseRepository.ExistsAsync(x => x.Number == request.Number && x.StreetId == request.StreetId);
+        if (houseExists) throw new ConflictException($"House with number {request.Number} already exists on street with id {request.StreetId}");
+
         var house = new House();
         house.CreatedAt = DateTime.UtcNow;
         house.Number = request.Number;

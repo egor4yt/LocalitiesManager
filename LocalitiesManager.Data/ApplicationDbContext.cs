@@ -17,6 +17,7 @@ public class ApplicationDbContext : DbContext
     public DbSet<Locality> Localities { get; set; }
     public DbSet<LocalityType> LocalityTypes { get; set; }
     public DbSet<StreetType> StreetTypes { get; set; }
+    public DbSet<OwnerApartmentRelation> OwnerApartmentRelations { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -68,6 +69,7 @@ public class ApplicationDbContext : DbContext
                 entity =>
                 {
                     entity.Property(p => p.CreatedAt).HasDefaultValueSql("CURRENT_TIMESTAMP"); // WORKING ONLY WITH POSTGRES
+                    entity.Property(p => p.Id).ValueGeneratedOnAdd();
                     entity.HasKey(p => new { p.OwnerId, p.ApartmentId });
                 }
             );

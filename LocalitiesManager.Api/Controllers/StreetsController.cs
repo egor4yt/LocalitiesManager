@@ -51,7 +51,7 @@ public class StreetsController : ApiControllerBase
     [HttpDelete("delete/{streetId:long}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<ActionResult> UpdateOne([FromRoute] long streetId)
+    public async Task<ActionResult> DeleteOne([FromRoute] long streetId)
     {
         var request = new DeleteOneStreetsCommandsRequest();
         request.StreetId = streetId;
