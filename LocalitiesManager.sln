@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalitiesManager.Data", "L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalitiesManager.Shared", "LocalitiesManager.Shared\LocalitiesManager.Shared.csproj", "{49109456-7190-4B50-B73F-9E8CFE03457B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalitiesManager.CommandsQueries", "LocalitiesManager.CommandsQueries\LocalitiesManager.CommandsQueries.csproj", "{0D9DCEE4-4A9B-49A3-9AB0-F8EC82C46E2B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalitiesManager.Api.CommandsQueries", "LocalitiesManager.Api.CommandsQueries\LocalitiesManager.Api.CommandsQueries.csproj", "{0D9DCEE4-4A9B-49A3-9AB0-F8EC82C46E2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

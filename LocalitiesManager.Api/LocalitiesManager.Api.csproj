@@ -28,7 +28,7 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\LocalitiesManager.CommandsQueries\LocalitiesManager.CommandsQueries.csproj" />
+      <ProjectReference Include="..\LocalitiesManager.Api.CommandsQueries\LocalitiesManager.Api.CommandsQueries.csproj" />
       <ProjectReference Include="..\LocalitiesManager.Data\LocalitiesManager.Data.csproj" />
       <ProjectReference Include="..\LocalitiesManager.Shared\LocalitiesManager.Shared.csproj" />
     </ItemGroup>

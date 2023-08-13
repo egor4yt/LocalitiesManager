@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+        <AssemblyName>LocalitiesManager.Api.CommandsQueries</AssemblyName>
+        <RootNamespace>LocalitiesManager.Api.CommandsQueries</RootNamespace>
+        <PackageId>LocalitiesManager.Api.CommandsQueries</PackageId>
+        <Authors>LocalitiesManager.Api.CommandsQueries</Authors>
+        <Company>LocalitiesManager.Api.CommandsQueries</Company>
+        <Product>LocalitiesManager.Api.CommandsQueries</Product>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="12.0.1" />
+      <PackageReference Include="MediatR" Version="12.1.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\LocalitiesManager.Data\LocalitiesManager.Data.csproj" />
+      <ProjectReference Include="..\LocalitiesManager.Shared\LocalitiesManager.Shared.csproj" />
+    </ItemGroup>
+
+</Project>

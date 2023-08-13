@@ -1,10 +1,10 @@
 ﻿using System.Reflection;
-using LocalitiesManager.CommandsQueries.Mappings;
+using LocalitiesManager.Api.CommandsQueries.Mappings;
 using LocalitiesManager.Data;
 using LocalitiesManager.Shared.Extensions;
 using LocalitiesManager.Shared.Helpers;
 using Microsoft.EntityFrameworkCore;
-using AssemblyRunner = LocalitiesManager.CommandsQueries.AssemblyRunner;
+using AssemblyRunner = LocalitiesManager.Api.CommandsQueries.AssemblyRunner;
 
 namespace LocalitiesManager.Api.Configuration;
 

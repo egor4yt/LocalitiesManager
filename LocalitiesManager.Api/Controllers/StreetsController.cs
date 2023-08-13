@@ -1,4 +1,4 @@
-using LocalitiesManager.CommandsQueries.Commands.Streets.SeedMany;
+using LocalitiesManager.Api.CommandsQueries.Commands.Streets.SeedMany;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LocalitiesManager.Api.Controllers;
