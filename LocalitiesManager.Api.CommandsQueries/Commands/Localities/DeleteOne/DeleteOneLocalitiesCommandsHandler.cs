@@ -1,4 +1,3 @@
-using AutoMapper;
 using LocalitiesManager.Data.Repositories.Interfaces;
 using LocalitiesManager.Shared.Exceptions;
 using MediatR;
@@ -8,12 +7,10 @@ namespace LocalitiesManager.Api.CommandsQueries.Commands.Localities.DeleteOne;
 public class DeleteOneLocalitiesCommandsHandler : IRequestHandler<DeleteOneLocalitiesCommandsRequest>
 {
     private readonly ILocalityRepository _localityRepository;
-    private readonly IMapper _mapper;
 
-    public DeleteOneLocalitiesCommandsHandler(ILocalityRepository localityRepository, IMapper mapper)
+    public DeleteOneLocalitiesCommandsHandler(ILocalityRepository localityRepository)
     {
         _localityRepository = localityRepository;
-        _mapper = mapper;
     }
 
     public async Task Handle(DeleteOneLocalitiesCommandsRequest request, CancellationToken cancellationToken)

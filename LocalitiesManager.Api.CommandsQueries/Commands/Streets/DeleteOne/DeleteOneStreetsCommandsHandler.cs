@@ -1,4 +1,3 @@
-using AutoMapper;
 using LocalitiesManager.Data.Repositories.Interfaces;
 using LocalitiesManager.Shared.Exceptions;
 using MediatR;
@@ -7,12 +6,10 @@ namespace LocalitiesManager.Api.CommandsQueries.Commands.Streets.DeleteOne;
 
 public class DeleteOneStreetsCommandsHandler : IRequestHandler<DeleteOneStreetsCommandsRequest>
 {
-    private readonly IMapper _mapper;
     private readonly IStreetRepository _streetRepository;
 
-    public DeleteOneStreetsCommandsHandler(IMapper mapper, IStreetRepository streetRepository)
+    public DeleteOneStreetsCommandsHandler(IStreetRepository streetRepository)
     {
-        _mapper = mapper;
         _streetRepository = streetRepository;
     }
 

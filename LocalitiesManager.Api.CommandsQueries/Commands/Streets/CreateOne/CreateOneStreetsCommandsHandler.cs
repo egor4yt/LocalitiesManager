@@ -27,8 +27,8 @@ public class CreateOneStreetsCommandsHandler : IRequestHandler<CreateOneStreetsC
         var streetTypeExists = await _streetTypeRepository.ExistsAsync(x => x.Id == request.StreetTypeId);
         if (streetTypeExists == false) throw new NotFoundException($"Street type with id {request.StreetTypeId} does not exists");
 
-        var locality = await _localityRepository.FindFirstOrDefaultWithStreetsAsync(x => x.Id == request.LocalityId);
-        if (locality is null) throw new NotFoundException($"Locality with id {request.LocalityId} not found");
+        var localityExists = await _localityRepository.ExistsAsync(x => x.Id == request.LocalityId);
+        if (localityExists == false) throw new NotFoundException($"Locality with id {request.LocalityId} not found");
 
         var street = new Street();
         street.CreatedAt = DateTime.UtcNow;
