@@ -1,4 +1,3 @@
-using System.Net;
 using LocalitiesManager.CommandsQueries.Commands.Localities.CreateOne;
 using LocalitiesManager.CommandsQueries.Queries.Localities.Filter;
 using Microsoft.AspNetCore.Mvc;
@@ -15,7 +14,7 @@ public class LocalitiesController : ApiControllerBase
         var result = await Mediator.Send(query);
         return Ok(result);
     }
-    
+
     [HttpPost("create-one")]
     [ProducesResponseType(typeof(CreateOneLocalitiesCommandsResponse), StatusCodes.Status200OK)]
     public async Task<ActionResult<CreateOneLocalitiesCommandsResponse>> CreateOne([FromBody] CreateOneLocalitiesCommandsRequest query)

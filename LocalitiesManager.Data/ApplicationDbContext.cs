@@ -80,5 +80,8 @@ public class ApplicationDbContext : DbContext
 
         var streetTypes = StreetTypesSeed.Get();
         builder.Entity<StreetType>().HasData(streetTypes);
+        
+        var localities = LocalitiesSeed.Get();
+        builder.Entity<Locality>().HasData(localities);
     }
 }
