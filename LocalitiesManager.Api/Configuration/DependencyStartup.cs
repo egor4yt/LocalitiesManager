@@ -1,7 +1,10 @@
-﻿using LocalitiesManager.Data;
+﻿using System.Reflection;
+using LocalitiesManager.CommandsQueries.Mappings;
+using LocalitiesManager.Data;
 using LocalitiesManager.Shared.Extensions;
 using LocalitiesManager.Shared.Helpers;
 using Microsoft.EntityFrameworkCore;
+using AssemblyRunner = LocalitiesManager.CommandsQueries.AssemblyRunner;
 
 namespace LocalitiesManager.Api.Configuration;
 
@@ -10,6 +13,7 @@ public static class DependencyStartup
     public static void ConfigureServices(this WebApplicationBuilder builder)
     {
         AddInfrastructure(builder.Services);
+        AddSecurity(builder.Services);
         AddCommands(builder.Services);
         ConfigureRepositories(builder.Services);
     }
@@ -20,10 +24,29 @@ public static class DependencyStartup
         services.AddHttpContextAccessor();
         services.AddMemoryCache();
         services.AddEndpointsApiExplorer();
+        services.AddMediatR(config => { config.RegisterServicesFromAssembly(typeof(AssemblyRunner).Assembly); });
+        services.AddAutoMapper(config =>
+        {
+            config.AddProfile(new AssemblyMappingProfile(Assembly.GetExecutingAssembly()));
+            config.AddProfile(new AssemblyMappingProfile(typeof(AssemblyRunner).Assembly));
+        });
 
         if (EnvironmentHelper.IsProduction) return;
 
         services.AddSwaggerGen();
+    }
+    
+    private static void AddSecurity(IServiceCollection services)
+    {
+        services.AddCors(config =>
+        {
+            config.AddPolicy("AllowAll", policy =>
+            {
+                policy.AllowAnyHeader();
+                policy.AllowAnyMethod();
+                policy.AllowAnyOrigin();
+            });
+        });
     }
 
     private static void AddCommands(IServiceCollection services)
@@ -34,7 +57,7 @@ public static class DependencyStartup
     private static void ConfigureRepositories(IServiceCollection services)
     {
         services.AddDbContext<ApplicationDbContext>(x => x.UseNpgsql(AppConfiguration.DatabaseConnectionString));
-        var repositoriesAssembly = typeof(AssemblyRunner).Assembly;
+        var repositoriesAssembly = typeof(Data.AssemblyRunner).Assembly;
         services.RegisterScopedServicesEndsWith("Repository", repositoriesAssembly);
     }
 }
