@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 using MediatR;
 
@@ -8,6 +9,9 @@ public class UpdateOneLocalitiesCommandsRequest : IRequest<UpdateOneLocalitiesCo
     [JsonIgnore]
     public long LocalityId { get; set; }
 
+    [Required]
     public string Name { get; set; }
+
+    [Required]
     public long LocalityTypeId { get; set; }
 }

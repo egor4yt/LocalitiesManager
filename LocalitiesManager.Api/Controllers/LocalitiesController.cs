@@ -19,9 +19,9 @@ public class LocalitiesController : ApiControllerBase
     }
 
     [HttpGet("{localityId:long}")]
-    [ProducesResponseType(typeof(FilterLocalitiesQueriesResponse), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(GetByIdLocalitiesCommandsResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<ActionResult<FilterLocalitiesQueriesResponse>> Filter([FromRoute] long localityId)
+    public async Task<ActionResult<GetByIdLocalitiesCommandsResponse>> Filter([FromRoute] long localityId)
     {
         var query = new GetByIdLocalitiesCommandsQuery();
         query.LocalityId = localityId;

@@ -7,15 +7,15 @@ using MediatR;
 
 namespace LocalitiesManager.Api.CommandsQueries.Commands.Streets.SeedMany;
 
-public class SeedManyLocalitiesCommandsHandler : IRequestHandler<SeedManyLocalitiesCommandsRequest, SeedManyLocalitiesCommandsResponse>
+public class SeedManyStreetsCommandsHandler : IRequestHandler<SeedManyStreetsCommandsRequest, SeedManyStreetsCommandsResponse>
 {
-    private static readonly List<string> StreetNames = new() { "Юности", "Транспортников", "Светлогорская", "Красноярский рабочий", "Тверская", "50 лет октября", "9 мая", "Пушкина", "Гоголя", "Колосова", "Железнодорожников", "Партизанов", "Павлова", "Вавилова" };
+    private static readonly List<string> StreetNames = new() { "Юности", "Транспортников", "Светлогорская", "Красноярский рабочий", "Тверская", "50 лет октября", "9 мая", "Пушкина", "Гоголя", "Колосова", "Железнодорожников", "Партизанов", "Павлова", "Вавилова", "Воеводова", "Голубева", "Осени" };
     private readonly ILocalityRepository _localityRepository;
     private readonly IMapper _mapper;
     private readonly IStreetRepository _streetRepository;
     private readonly IStreetTypeRepository _streetTypeRepository;
 
-    public SeedManyLocalitiesCommandsHandler(ILocalityRepository localityRepository, IMapper mapper, IStreetRepository streetRepository, IStreetTypeRepository streetTypeRepository)
+    public SeedManyStreetsCommandsHandler(ILocalityRepository localityRepository, IMapper mapper, IStreetRepository streetRepository, IStreetTypeRepository streetTypeRepository)
     {
         _localityRepository = localityRepository;
         _mapper = mapper;
@@ -23,9 +23,9 @@ public class SeedManyLocalitiesCommandsHandler : IRequestHandler<SeedManyLocalit
         _streetTypeRepository = streetTypeRepository;
     }
 
-    public async Task<SeedManyLocalitiesCommandsResponse> Handle(SeedManyLocalitiesCommandsRequest request, CancellationToken cancellationToken)
+    public async Task<SeedManyStreetsCommandsResponse> Handle(SeedManyStreetsCommandsRequest request, CancellationToken cancellationToken)
     {
-        var response = new SeedManyLocalitiesCommandsResponse();
+        var response = new SeedManyStreetsCommandsResponse();
         var locality = await _localityRepository.FindFirstOrDefaultAsync(x => x.Id == request.LocalityId);
         if (locality is null) throw new NotFoundException($"Locality with id {request.LocalityId} not found");
 
@@ -46,7 +46,7 @@ public class SeedManyLocalitiesCommandsHandler : IRequestHandler<SeedManyLocalit
             await _streetRepository.InsertAsync(newStreet);
         }
 
-        response.Items = streets.AsQueryable().ProjectTo<SeedManyLocalitiesCommandsStreetDto>(_mapper.ConfigurationProvider).ToList();
+        response.Items = streets.AsQueryable().ProjectTo<SeedManyStreetsCommandsStreetDto>(_mapper.ConfigurationProvider).ToList();
 
         return response;
     }

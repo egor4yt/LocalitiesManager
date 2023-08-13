@@ -8,7 +8,7 @@ public class GetByIdLocalitiesCommandsResponse : IMapWith<Locality>
 {
     public long Id { get; set; }
     public string Name { get; set; }
-    public string LocalityTypeId { get; set; }
+    public long LocalityTypeId { get; set; }
 
     public void Mapping(Profile profile)
     {

@@ -4,7 +4,7 @@ using LocalitiesManager.Data.Entities;
 
 namespace LocalitiesManager.Api.CommandsQueries.Commands.Streets.SeedMany;
 
-public class SeedManyLocalitiesCommandsStreetDto : IMapWith<Street>
+public class SeedManyStreetsCommandsStreetDto : IMapWith<Street>
 {
     public long Id { get; set; }
     public string Name { get; set; }
@@ -12,7 +12,7 @@ public class SeedManyLocalitiesCommandsStreetDto : IMapWith<Street>
 
     public void Mapping(Profile profile)
     {
-        profile.CreateMap<Street, SeedManyLocalitiesCommandsStreetDto>()
+        profile.CreateMap<Street, SeedManyStreetsCommandsStreetDto>()
             .ForMember(dest => dest.Name,
                 opt => opt.MapFrom(src => src.Name))
             .ForMember(dest => dest.Id,
