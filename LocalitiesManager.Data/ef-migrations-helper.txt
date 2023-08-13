@@ -1,0 +1,7 @@
+dotnet ef migrations add Init --project LocalitiesManager.Data --startup-project LocalitiesManager.Api 
+
+dotnet ef database update --project LocalitiesManager.Data --startup-project LocalitiesManager.Api
+
+dotnet ef database drop --project LocalitiesManager.Data --startup-project LocalitiesManager.Api
+
+dotnet ef migrations remove --project LocalitiesManager.Data --startup-project LocalitiesManager.Api

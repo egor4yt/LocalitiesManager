@@ -1,10 +1,11 @@
-﻿namespace LocalitiesManager.Api.Extensions;
+﻿using System.Reflection;
+
+namespace LocalitiesManager.Api.Extensions;
 
 public static class ServiceCollectionExtension
 {
-    public static void RegisterScopedServicesEndsWith(this IServiceCollection services, string value)
+    public static void RegisterScopedServicesEndsWith(this IServiceCollection services, string value, Assembly assembly)
     {
-        var assembly = typeof(ServiceCollectionExtension).Assembly;
         var classes = assembly.GetTypes().Where(x => x.Name.EndsWith(value) && x.IsClass);
 
         foreach (var @class in classes)
