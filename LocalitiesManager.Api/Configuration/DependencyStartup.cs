@@ -21,8 +21,6 @@ public static class DependencyStartup
     private static void AddInfrastructure(IServiceCollection services)
     {
         services.AddControllers();
-        services.AddHttpContextAccessor();
-        services.AddMemoryCache();
         services.AddEndpointsApiExplorer();
         services.AddMediatR(config => { config.RegisterServicesFromAssembly(typeof(AssemblyRunner).Assembly); });
         services.AddAutoMapper(config =>

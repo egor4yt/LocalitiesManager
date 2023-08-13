@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalitiesManager.Shared", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalitiesManager.Api.CommandsQueries", "LocalitiesManager.Api.CommandsQueries\LocalitiesManager.Api.CommandsQueries.csproj", "{0D9DCEE4-4A9B-49A3-9AB0-F8EC82C46E2B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalitiesManager.Frontend", "LocalitiesManager.Frontend\LocalitiesManager.Frontend.csproj", "{CAAB9D28-78E2-4B5C-B2B6-CD5C7AE84E71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{0D9DCEE4-4A9B-49A3-9AB0-F8EC82C46E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D9DCEE4-4A9B-49A3-9AB0-F8EC82C46E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D9DCEE4-4A9B-49A3-9AB0-F8EC82C46E2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAAB9D28-78E2-4B5C-B2B6-CD5C7AE84E71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAAB9D28-78E2-4B5C-B2B6-CD5C7AE84E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAAB9D28-78E2-4B5C-B2B6-CD5C7AE84E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAAB9D28-78E2-4B5C-B2B6-CD5C7AE84E71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,13 @@
+﻿{
+  "profiles": {
+    "Local": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "https://localhost:7094;http://localhost:5238",
+      "environmentVariables": {
+        "ENVIRONMENT": "Local"
+      }
+    }
+  }
+}
