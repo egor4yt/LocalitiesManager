@@ -6,10 +6,10 @@ namespace LocalitiesManager.Api.Middlewares;
 
 public class ExceptionHandlerMiddleware
 {
-    private readonly ILogger _logger;
+    private readonly ILogger<ExceptionHandlerMiddleware> _logger;
     private readonly RequestDelegate _next;
 
-    public ExceptionHandlerMiddleware(RequestDelegate next, ILogger logger)
+    public ExceptionHandlerMiddleware(RequestDelegate next, ILogger<ExceptionHandlerMiddleware> logger)
     {
         _next = next;
         _logger = logger;

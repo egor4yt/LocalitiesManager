@@ -1,4 +1,4 @@
-dotnet ef migrations add AddedSeedLocalities --project LocalitiesManager.Data --startup-project LocalitiesManager.Api 
+dotnet ef migrations add StreetsTableModelBugFix --project LocalitiesManager.Data --startup-project LocalitiesManager.Api 
 
 dotnet ef database update --project LocalitiesManager.Data --startup-project LocalitiesManager.Api
 

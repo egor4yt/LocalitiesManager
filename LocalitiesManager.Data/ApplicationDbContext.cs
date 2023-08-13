@@ -41,7 +41,7 @@ public class ApplicationDbContext : DbContext
         builder.Entity<Street>()
             .HasOne(p => p.Locality)
             .WithMany(p => p.Streets)
-            .HasForeignKey(p => p.StreetTypeId);
+            .HasForeignKey(p => p.LocalityId);
 
         builder.Entity<House>()
             .HasOne(p => p.Street)

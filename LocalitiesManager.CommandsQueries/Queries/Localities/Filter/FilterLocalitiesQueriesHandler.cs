@@ -26,11 +26,12 @@ public class FilterLocalitiesQueriesHandler : IRequestHandler<FilterLocalitiesQu
         if (string.IsNullOrWhiteSpace(request.Name) == false) localitiesQuery = localitiesQuery.Where(x => x.Name.ToLower().Contains(request.Name.ToLower()));
         if (request.Count > 0) localitiesQuery = localitiesQuery.Take(request.Count);
 
-        response.Total = await localitiesQuery.LongCountAsync(cancellationToken: cancellationToken);
+        response.Total = await localitiesQuery.LongCountAsync(cancellationToken);
         response.Items = await localitiesQuery
             .ProjectTo<FilterLocalitiesQueriesLocalityDto>(_mapper.ConfigurationProvider)
+            .OrderBy(x => x.Name)
             .ToListAsync(cancellationToken);
-        
+
         return response;
     }
 }
