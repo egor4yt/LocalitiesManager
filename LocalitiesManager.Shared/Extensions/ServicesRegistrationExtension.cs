@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace LocalitiesManager.Api.Extensions;
+namespace LocalitiesManager.Shared.Extensions;
 
 public static class ServiceCollectionExtension
 {

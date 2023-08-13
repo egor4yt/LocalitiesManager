@@ -1,4 +1,4 @@
-﻿namespace LocalitiesManager.Api.Extensions;
+﻿namespace LocalitiesManager.Shared.Extensions;
 
 public static class ThrowIfNullExtension
 {

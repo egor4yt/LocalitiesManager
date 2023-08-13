@@ -1,6 +1,6 @@
-﻿using LocalitiesManager.Api.Extensions;
-using LocalitiesManager.Api.Helpers;
-using LocalitiesManager.Data;
+﻿using LocalitiesManager.Data;
+using LocalitiesManager.Shared.Extensions;
+using LocalitiesManager.Shared.Helpers;
 using Microsoft.EntityFrameworkCore;
 
 namespace LocalitiesManager.Api.Configuration;

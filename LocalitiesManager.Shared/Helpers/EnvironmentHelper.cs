@@ -1,4 +1,4 @@
-﻿namespace LocalitiesManager.Api.Helpers;
+﻿namespace LocalitiesManager.Shared.Helpers;
 
 public static class EnvironmentHelper
 {

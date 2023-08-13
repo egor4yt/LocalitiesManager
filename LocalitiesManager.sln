@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalitiesManager.Api", "Lo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalitiesManager.Data", "LocalitiesManager.Data\LocalitiesManager.Data.csproj", "{810EE88F-2328-45F8-8773-8C207FF018C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalitiesManager.Shared", "LocalitiesManager.Shared\LocalitiesManager.Shared.csproj", "{49109456-7190-4B50-B73F-9E8CFE03457B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{810EE88F-2328-45F8-8773-8C207FF018C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{810EE88F-2328-45F8-8773-8C207FF018C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{810EE88F-2328-45F8-8773-8C207FF018C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49109456-7190-4B50-B73F-9E8CFE03457B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49109456-7190-4B50-B73F-9E8CFE03457B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49109456-7190-4B50-B73F-9E8CFE03457B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49109456-7190-4B50-B73F-9E8CFE03457B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
