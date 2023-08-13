@@ -17,7 +17,7 @@ public class LocalitiesController : ApiControllerBase
         var result = await Mediator.Send(query);
         return Ok(result);
     }
-    
+
     [HttpGet("{localityId:long}")]
     [ProducesResponseType(typeof(FilterLocalitiesQueriesResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -47,7 +47,7 @@ public class LocalitiesController : ApiControllerBase
         var result = await Mediator.Send(request);
         return Ok(result);
     }
-    
+
     [HttpDelete("delete/{localityId:long}")]
     [ProducesResponseType(typeof(UpdateOneLocalitiesCommandsResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]

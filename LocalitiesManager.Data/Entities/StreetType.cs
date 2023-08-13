@@ -16,6 +16,6 @@ public class StreetType : EntityBase
     [StringLength(100)]
     [Column(TypeName = "VARCHAR")]
     public string Prefix { get; set; }
-    
+
     public virtual List<Street> Streets { get; set; }
 }

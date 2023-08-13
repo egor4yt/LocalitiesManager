@@ -14,7 +14,7 @@ public class LocalityRepository : RepositoryBase<Locality>, ILocalityRepository
     public async Task<Locality> FindFirstOrDefaultWithStreetsAsync(Expression<Func<Locality, bool>> match)
     {
         return await DbSet
-            .Include(x=>x.Streets)
+            .Include(x => x.Streets)
             .FirstOrDefaultAsync(match);
     }
 }

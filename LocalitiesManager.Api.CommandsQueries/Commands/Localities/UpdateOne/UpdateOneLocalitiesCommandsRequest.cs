@@ -7,6 +7,7 @@ public class UpdateOneLocalitiesCommandsRequest : IRequest<UpdateOneLocalitiesCo
 {
     [JsonIgnore]
     public long LocalityId { get; set; }
+
     public string Name { get; set; }
     public long LocalityTypeId { get; set; }
 }

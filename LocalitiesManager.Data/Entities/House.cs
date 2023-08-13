@@ -11,11 +11,11 @@ public class House : EntityBase
     [StringLength(100)]
     [Column(TypeName = "VARCHAR")]
     public string Number { get; set; }
-    
+
     [Required]
     public long StreetId { get; set; }
-    
+
     public virtual Street Street { get; set; }
-    
+
     public virtual List<Apartment> Apartments { get; set; }
 }

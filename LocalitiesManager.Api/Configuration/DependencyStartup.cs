@@ -35,7 +35,7 @@ public static class DependencyStartup
 
         services.AddSwaggerGen();
     }
-    
+
     private static void AddSecurity(IServiceCollection services)
     {
         services.AddCors(config =>

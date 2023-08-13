@@ -1,6 +1,5 @@
 using System.Net;
 using LocalitiesManager.Shared.Exceptions.Base;
-using LocalitiesManager.Shared.Helpers;
 
 namespace LocalitiesManager.Api.Middlewares;
 
@@ -34,7 +33,7 @@ public class ExceptionHandlerMiddleware
             // if (!EnvironmentHelper.IsLocal) await _logger.LogErrorAsync(ex);
             // else responseMessage += $"\n{ex.StackTrace}";
             responseMessage += $"\n{ex.StackTrace}";
-            
+
             context.Response.ContentType = "text/plain";
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
             await context.Response.WriteAsync(responseMessage);

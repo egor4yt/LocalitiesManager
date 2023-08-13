@@ -4,7 +4,7 @@ using LocalitiesManager.Data.Entities;
 
 namespace LocalitiesManager.Api.CommandsQueries.Commands.Streets.SeedMany;
 
-public class SeedManyLocalitiesCommandsStreetDto: IMapWith<Street>
+public class SeedManyLocalitiesCommandsStreetDto : IMapWith<Street>
 {
     public long Id { get; set; }
     public string Name { get; set; }

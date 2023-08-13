@@ -16,6 +16,6 @@ public class Locality : EntityBase
     public long LocalityTypeId { get; set; }
 
     public virtual LocalityType LocalityType { get; set; }
-    
+
     public virtual List<Street> Streets { get; set; }
 }

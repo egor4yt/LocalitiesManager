@@ -11,11 +11,11 @@ public static class MiddlewaresConfiguration
 
         app.UseSwagger();
         app.UseSwaggerUI();
-        
+
         app.UseCors("AllowAll");
         app.UseHsts();
         app.UseHttpsRedirection();
-        
+
         app.MapControllers();
     }
 }

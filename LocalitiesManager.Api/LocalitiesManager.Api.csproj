@@ -10,26 +10,26 @@
         <Product>LocalitiesManager.Api</Product>
     </PropertyGroup>
 
-    <PropertyGroup Condition=" '$(RunConfiguration)' == 'LocalitiesManagerLocal' " />
-    <PropertyGroup Condition=" '$(RunConfiguration)' == 'LocalitiesManagerProduction' " />
+    <PropertyGroup Condition=" '$(RunConfiguration)' == 'LocalitiesManagerLocal' "/>
+    <PropertyGroup Condition=" '$(RunConfiguration)' == 'LocalitiesManagerProduction' "/>
     <ItemGroup>
-        <None Remove="Configuration\" />
-        <None Remove="Swashbuckle.AspNetCore" />
-        <None Remove="Extensions\" />
-        <None Remove="Helpers\" />
+        <None Remove="Configuration\"/>
+        <None Remove="Swashbuckle.AspNetCore"/>
+        <None Remove="Extensions\"/>
+        <None Remove="Helpers\"/>
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
-        <PackageReference Include="MediatR" Version="12.1.1" />
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1"/>
+        <PackageReference Include="MediatR" Version="12.1.1"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.10">
-          <PrivateAssets>all</PrivateAssets>
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0"/>
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\LocalitiesManager.Api.CommandsQueries\LocalitiesManager.Api.CommandsQueries.csproj" />
-      <ProjectReference Include="..\LocalitiesManager.Data\LocalitiesManager.Data.csproj" />
-      <ProjectReference Include="..\LocalitiesManager.Shared\LocalitiesManager.Shared.csproj" />
+        <ProjectReference Include="..\LocalitiesManager.Api.CommandsQueries\LocalitiesManager.Api.CommandsQueries.csproj"/>
+        <ProjectReference Include="..\LocalitiesManager.Data\LocalitiesManager.Data.csproj"/>
+        <ProjectReference Include="..\LocalitiesManager.Shared\LocalitiesManager.Shared.csproj"/>
     </ItemGroup>
 </Project>

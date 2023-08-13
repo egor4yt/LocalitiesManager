@@ -20,7 +20,7 @@ public class Owner : EntityBase
     [StringLength(100)]
     [Column(TypeName = "VARCHAR")]
     public string Surname { get; set; }
-    
+
     public virtual List<Apartment> Apartments { get; set; }
     public virtual List<OwnerApartmentRelation> OwnerApartmentRelations { get; set; }
 }

@@ -20,6 +20,6 @@ public class Street : EntityBase
 
     public virtual StreetType StreetType { get; set; }
     public virtual Locality Locality { get; set; }
-    
+
     public virtual List<House> Houses { get; set; }
 }
