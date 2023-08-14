@@ -1,27 +1,60 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-class AbstractList
-abstract AbstractCollection
-interface List
-interface Collection
-
-List <|-- AbstractList
-Collection <|-- AbstractCollection
-
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
-
 class CreateOneApartmentsCommandsHandler {
     - IApartmentRepository _apartmentRepository
     - IHouseRepository _houseRepository
-    - IMapper _mapper
     - IOwnerRepository _ownerRepository
+    - IMapper _mapper
+    --
+    + Handle(request: CreateOneApartmentsCommandsRequest, cancellationToken: CancellationToken)
 }
 
-interface IApartmentRepository
+ApartmentRepository --|> IApartmentRepository
+IApartmentRepository --|> IRepositoryBase
 
-CreateOneApartmentsCommandsHandler <|-- IApartmentRepository
+interface IApartmentRepository {
+    + Task<Apartment> FindFirstOrDefaultWithOwnersAsync(match: Expression<Func<Apartment, bool>>);
+}
+
+class ApartmentRepository {
+}
+
+OwnerRepository --|> IOwnerRepository
+IOwnerRepository --|> IRepositoryBase
+
+interface IOwnerRepository {
+}
+
+class OwnerRepository {
+}
+
+HouseRepository --|> IHouseRepository
+IHouseRepository --|> IRepositoryBase
+
+interface IHouseRepository {
+    + Task<House> FindFirstOrDefaultWithApartmentsAsync(match: Expression<Func<House, bool>>)
+}
+
+class HouseRepository {
+}
+
+RepositoryBase --|> IRepositoryBase
+
+interface IRepositoryBase<<TEntity>> {
+    + IQueryable<TEntity> AsQueryable()
+        + Task<TEntity?> FindFirstOrDefaultAsync(match: Expression<Func<TEntity, bool>>)
+        + Task<bool> ExistsAsync(match: Expression<Func<TEntity, bool>>)
+        + Task InsertAsync(entity: TEntity)
+        + Task<TEntity> UpdateAsync(entityToUpdate: TEntity)
+        + Task<List<TEntity>> FindAllAsync(match: Expression<Func<TEntity, bool>>)
+        + Task DeleteAsync(entity: TEntity)
+        + Task DeleteRangeAsync(entity: IEnumerable<TEntity>)
+}
+
+class RepositoryBase<<TEntity>> {
+    - ApplicationDbContext _context
+    # DbSet<TEntity> DbSet
+}
 
 @enduml
