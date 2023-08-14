@@ -70,7 +70,7 @@ public class ApplicationDbContext : DbContext
                 {
                     entity.Property(p => p.CreatedAt).HasDefaultValueSql("CURRENT_TIMESTAMP"); // WORKING ONLY WITH POSTGRES
                     entity.Property(p => p.Id).ValueGeneratedOnAdd();
-                    entity.HasKey(p => new { p.OwnerId, p.ApartmentId });
+                    entity.HasKey(p => p.Id);
                 }
             );
     }
@@ -80,13 +80,22 @@ public class ApplicationDbContext : DbContext
         var localityTypes = LocalityTypesSeed.Get();
         builder.Entity<LocalityType>().HasData(localityTypes);
 
-        var streetTypes = StreetTypesSeed.Get();
+        var streetTypes = StreetTypesSeed.Get().ToList();
         builder.Entity<StreetType>().HasData(streetTypes);
 
-        var localities = LocalitiesSeed.Get();
+        var localities = LocalitiesSeed.Get().ToList();
         builder.Entity<Locality>().HasData(localities);
 
-        var owners = OwnersSeed.Get();
+        var owners = OwnersSeed.Get().ToList();
         builder.Entity<Owner>().HasData(owners);
+        
+        var streets = StreetsSeed.Get(localities, streetTypes).ToList();
+        builder.Entity<Street>().HasData(streets);
+        
+        var houses = HousesSeed.Get(streets).ToList();
+        builder.Entity<House>().HasData(houses);
+        
+        var apartments = ApartmentsSeed.Get(houses).ToList();
+        builder.Entity<Apartment>().HasData(apartments);
     }
 }

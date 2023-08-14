@@ -31,7 +31,9 @@ public class FilterHousesQueriesHandler : IRequestHandler<FilterHousesQueriesQue
         response.Total = await housesQuery.LongCountAsync(cancellationToken);
         response.Items = await housesQuery
             .ProjectTo<FilterHousesQueriesLocalityDto>(_mapper.ConfigurationProvider)
-            .OrderBy(x => x.Number)
+            .OrderBy(x => x.LocalityName)
+            .ThenBy(x=>x.LocalityName)
+            .ThenBy(x=>x.ApartmentsCount)
             .ToListAsync(cancellationToken);
 
         return response;

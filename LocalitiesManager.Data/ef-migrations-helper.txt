@@ -1,4 +1,4 @@
-dotnet ef migrations add OwnerApartmentsRelationsFix --project LocalitiesManager.Data --startup-project LocalitiesManager.Api 
+dotnet ef migrations add AddedSeeds --project LocalitiesManager.Data --startup-project LocalitiesManager.Api 
 
 dotnet ef database update --project LocalitiesManager.Data --startup-project LocalitiesManager.Api
 

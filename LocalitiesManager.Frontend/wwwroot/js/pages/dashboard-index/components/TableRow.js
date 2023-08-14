@@ -22,7 +22,7 @@ export class TableRow {
                                <td>${this.house.apartmentsCount}</td>
                                <td>
                                    <div>
-                                       <button class="btn btn-primary">ID: ${this.house.id}</button>
+                                       <button class="btn btn-primary">Редактировать</button>
                                    </div>
                                </td>
                            </tr>`;
