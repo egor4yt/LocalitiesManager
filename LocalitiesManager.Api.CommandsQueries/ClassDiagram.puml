@@ -10,11 +10,21 @@ class CreateOneApartmentsCommandsHandler {
     + Handle(request: CreateOneApartmentsCommandsRequest, cancellationToken: CancellationToken)
 }
 
+StreetRepository --|> IStreetRepository
+IStreetRepository --|> IRepositoryBase
+
+interface IStreetRepository {
+    + Task<Street> FindFirstOrDefaultWithHousesAsync(match: Expression<Func<Street, bool>>)
+}
+
+class StreetRepository {
+}
+
 ApartmentRepository --|> IApartmentRepository
 IApartmentRepository --|> IRepositoryBase
 
 interface IApartmentRepository {
-    + Task<Apartment> FindFirstOrDefaultWithOwnersAsync(match: Expression<Func<Apartment, bool>>);
+    + Task<Apartment> FindFirstOrDefaultWithOwnersAsync(match: Expression<Func<Apartment, bool>>)
 }
 
 class ApartmentRepository {
