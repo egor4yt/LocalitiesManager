@@ -1,4 +1,4 @@
-using LocalitiesManager.Shared.Helpers;
+using Microsoft.AspNetCore.Builder;
 
 namespace LocalitiesManager.Frontend.Configuration;
 

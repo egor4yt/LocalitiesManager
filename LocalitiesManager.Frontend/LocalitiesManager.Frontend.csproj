@@ -3,13 +3,11 @@
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
-        <ImplicitUsings>enable</ImplicitUsings>
+        <ImplicitUsings>disable</ImplicitUsings>
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\Api\" />
       <Folder Include="wwwroot\css\" />
-      <Folder Include="wwwroot\js\" />
     </ItemGroup>
 
     <ItemGroup>

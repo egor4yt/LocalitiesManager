@@ -1,4 +1,6 @@
-﻿namespace LocalitiesManager.Frontend.Configuration;
+﻿using System;
+
+namespace LocalitiesManager.Frontend.Configuration;
 
 public static class AppConfiguration
 {

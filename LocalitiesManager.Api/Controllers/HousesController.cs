@@ -1,6 +1,7 @@
 using LocalitiesManager.Api.CommandsQueries.Commands.Houses.CreateOne;
 using LocalitiesManager.Api.CommandsQueries.Commands.Houses.DeleteOne;
 using LocalitiesManager.Api.CommandsQueries.Commands.Houses.UpdateOne;
+using LocalitiesManager.Api.CommandsQueries.Queries.Houses.Filter;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LocalitiesManager.Api.Controllers;
@@ -8,6 +9,14 @@ namespace LocalitiesManager.Api.Controllers;
 [Route("houses")]
 public class HousesController : ApiControllerBase
 {
+    [HttpGet("filter")]
+    [ProducesResponseType(typeof(FilterHousesQueriesResponse), StatusCodes.Status200OK)]
+    public async Task<ActionResult<FilterHousesQueriesResponse>> Filter([FromQuery] FilterHousesQueriesQuery query)
+    {
+        var result = await Mediator.Send(query);
+        return Ok(result);
+    }
+    
     [HttpPost("create-one")]
     [ProducesResponseType(typeof(CreateOneHousesCommandsResponse), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
